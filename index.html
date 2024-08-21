@@ -38,12 +38,13 @@
         <canvas id="myChart"></canvas>
     </div>
     <script>
-        let myChart; // Variable global para el gráfico
+        let myyChart; // Variable global para el gráfico
 
         // Cargar el archivo CSV
         fetch('./data/data.csv')
             .then(response => response.text())
             .then(csvText => {
+			console.log(csvText)
                 // Parsear el CSV con PapaParse
                 Papa.parse(csvText, {
                     header: true, // Asume que la primera fila contiene los nombres de las columnas
@@ -55,8 +56,8 @@
                         const data = dataEstudio.map(row => row['NombreColumna2']);  // Cambia 'NombreColumna2' por la columna que quieras usar como datos
 
                         // Crear el gráfico
-                        const ctx = document.getElementById('myChart').getContext('2d');
-                        myChart = new Chart(ctx, {
+                        const ctx = document.getElementById('myyChart').getContext('2d');
+                        myyChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
                                 labels: labels,
