@@ -23,7 +23,7 @@
 //     });
 // })
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('./data/data.csv') // Reemplaza con la URL donde obtienes la lista de archivos
+    fetch('./data/files.json') // Reemplaza con la URL donde obtienes la lista de archivos
         .then(response => response.json())
         .then(files => {
 			console.log(files)
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 listItem.addEventListener('click', function() {
                     // Aquí podrías cargar el contenido del archivo
-                    fetch(`ruta/a/tu/archivo/${fileName}`)
+                    fetch(`./data/${fileName}`)
                         .then(response => response.text())
                         .then(data => {
                             dataUpdate(data); // Usar el contenido del archivo
