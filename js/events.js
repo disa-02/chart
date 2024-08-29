@@ -26,11 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('./data/files.json') // Reemplaza con la URL donde obtienes la lista de archivos
         .then(response => response.json())
         .then(files => {
-			console.log(files)
+			console.log(files.files)
             const fileList = document.getElementById('fileList');
             fileList.innerHTML = ''; // Limpiar la lista anterior, si existe
 
-            files.forEach((fileName, index) => {
+            files.files.forEach((fileName, index) => {
+				console.log(filename)
                 const listItem = document.createElement('div');
                 listItem.id = `file-${index}`;
                 listItem.textContent = `Archivo ${index + 1}: ${fileName}`;
