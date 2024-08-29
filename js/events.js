@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fileList.innerHTML = ''; // Limpiar la lista anterior, si existe
 
             files.files.forEach((fileName, index) => {
-				console.log(filename)
+				console.log(fileName)
                 const listItem = document.createElement('div');
                 listItem.id = `file-${index}`;
                 listItem.textContent = `Archivo ${index + 1}: ${fileName}`;
